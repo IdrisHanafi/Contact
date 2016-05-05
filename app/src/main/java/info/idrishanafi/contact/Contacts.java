@@ -10,12 +10,13 @@ public class Contacts {
     private String email;
     private int icon;
 
-    public Contacts(String firstName, String lastName, String phone, String email) {
+    public Contacts(String firstName, String lastName, String phone, String email, int icon) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
+        this.icon = icon;
     }
 
     public String getFirstName() {
