@@ -1,6 +1,8 @@
 package info.idrishanafi.contact;
 
 import android.media.Image;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements fragmentMain.toolbarClickListener {
 
     private List<Contacts> myContacts = new ArrayList<Contacts>();
 
@@ -25,9 +27,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentMain fragmentMain = new fragmentMain();
+        //FragmentTransaction test =
+        //fragmentTransaction.add(R.id.fragment_container, )
+
         populateContactsList();
         populateListView();
         registerClickCallbad();
+    }
+
+    @Override
+    public void buttonClicked(String btn) {
+        if(btn.equalsIgnoreCase("add")) {
+            Toast.makeText(MainActivity.this, "ADD", Toast.LENGTH_SHORT).show();
+        } else if(btn.equalsIgnoreCase("setting")) {
+            Toast.makeText(MainActivity.this, "SETTING", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void populateContactsList() {
