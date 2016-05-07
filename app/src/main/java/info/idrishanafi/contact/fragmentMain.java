@@ -3,6 +3,7 @@ package info.idrishanafi.contact;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,11 +16,10 @@ import android.widget.Toast;
 /**
  * Created by Idris on 5/5/16.
  */
-public class fragmentMain extends Fragment {
+public class fragmentMain extends Fragment implements View.OnClickListener {
 
     ImageButton addContactButton;
     ImageButton settingButton;
-    toolbarClickListener toolbarClickListener;
 
     @Nullable
     @Override
@@ -27,29 +27,27 @@ public class fragmentMain extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main_toolbar, container, false);
         addContactButton = (ImageButton) view.findViewById(R.id.addContactButton);
         settingButton = (ImageButton) view.findViewById(R.id.settingButton);
+        addContactButton.setOnClickListener(this);
+        settingButton.setOnClickListener(this);
 
         return view;
     }
 
-    public void buttonClicked(View view) {
-        if (view.getId() == R.id.addContactButton) {
-            //Toast.makeText(fragmentMain.this, "You Clicked add Contact Button", Toast.LENGTH_SHORT).show();
-            //Toast.makeText(, "Add Contact", Toast.LENGTH_SHORT).show();
-            toolbarClickListener.buttonClicked("add");
-        } else if (view.getId() == R.id.settingButton) {
-            toolbarClickListener.buttonClicked("setting");
-            //button2 action
-        }
-    }
-
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onClick(View v) {
 
-        toolbarClickListener = (toolbarClickListener) activity;
-    }
+        switch (v.getId()) {
+            case R.id.addContactButton:
+                Toast.makeText(getActivity(), "You Clicked add Contact Button", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), AddContactScreen.class);
+                startActivity(intent);
+                break;
 
-    public interface toolbarClickListener {
-        public void buttonClicked(String btn);
+            case R.id.settingButton:
+                Toast.makeText(getActivity(), "You Clicked Settings Button", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(getActivity(), settingsScreen.class);
+                startActivity(intent2);
+                break;
+        }
     }
 }

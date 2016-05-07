@@ -4,33 +4,17 @@
     android:layout_height="wrap_content"
     android:background="#fffbdd">
 
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/addContactButton"
+        android:id="@+id/cancelButton"
         android:background="@null"
-        android:src="@drawable/create"
-        android:adjustViewBounds="true"
-        android:maxWidth="42dp"
-        android:maxHeight="42dp"
-        android:scaleType="fitCenter"
-        android:layout_gravity="right"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="5dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/settingButton"
-        android:src="@drawable/settings"
-        android:background="@null"
+        android:src="@drawable/back"
         android:adjustViewBounds="true"
         android:maxWidth="45dp"
         android:maxHeight="45dp"
         android:scaleType="fitCenter"
+        android:layout_gravity="right"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -40,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="All Contacts"
+        android:text="New Contact"
         android:fontFamily="sans-serif-smallcaps"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
