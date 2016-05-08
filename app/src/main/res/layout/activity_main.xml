@@ -10,8 +10,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/main_toolbar"
         android:name="info.idrishanafi.contact.fragmentMain">
-
-
     </fragment>
 
     <ListView

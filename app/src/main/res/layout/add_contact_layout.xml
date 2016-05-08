@@ -116,7 +116,7 @@
         android:layout_height="80dp"
         android:scaleType="fitXY"
         android:id="@+id/imageView"
-        android:src="@drawable/obamasmile"
+        android:src="@android:drawable/sym_def_app_icon"
         android:maxHeight="30dp"
         android:maxWidth="30dp"
         android:layout_alignBottom="@+id/lastNameTextField"

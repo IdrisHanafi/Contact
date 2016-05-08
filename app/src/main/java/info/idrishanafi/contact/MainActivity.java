@@ -1,6 +1,7 @@
 package info.idrishanafi.contact;
 
 import android.media.Image;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Contacts> myContacts = new ArrayList<Contacts>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populateContactsList() {
+
+        // Call PHP file to execute query to set the values here
         myContacts.add(new Contacts("Idris", "Hanafi", "203-911", "ifh101@gmail.com", R.drawable.obama));
         myContacts.add(new Contacts("Obama", "normal", "203-911-normal", "obama@normal.com", R.drawable.obamanormal));
         myContacts.add(new Contacts("Obama", "smile", "203-911-smile", "obama@smile.com", R.drawable.obamasmile));
+        //myContacts.add(new Contacts("test", "test", "test", "test", 0));
     }
 
     private void populateListView() {
@@ -71,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Icon
             ImageView imageView = (ImageView) itemView.findViewById(R.id.contact_Icon);
+            // Set Image Below
+            // new DownloadImage(imageName.getText().toString(), imageView).execute();
             imageView.setImageResource(currentContacts.getIcon());
             // First Name
             TextView firstName = (TextView) itemView.findViewById(R.id.contact_firstName);

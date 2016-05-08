@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="info.idrishanafi.contact">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,5 +23,4 @@
         <activity android:name=".settingsScreen">
         </activity>
     </application>
-
 </manifest>
