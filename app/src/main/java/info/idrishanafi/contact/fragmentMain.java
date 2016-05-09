@@ -20,6 +20,7 @@ public class fragmentMain extends Fragment implements View.OnClickListener {
 
     ImageButton addContactButton;
     ImageButton settingButton;
+    ImageButton removeButton;
 
     @Nullable
     @Override
@@ -38,13 +39,13 @@ public class fragmentMain extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.addContactButton:
-                Toast.makeText(getActivity(), "You Clicked add Contact Button", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "You Clicked add Contact Button", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), AddContactScreen.class);
                 startActivity(intent);
                 break;
 
             case R.id.settingButton:
-                Toast.makeText(getActivity(), "You Clicked Settings Button", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "You Clicked Settings Button", Toast.LENGTH_SHORT).show();
                 Intent intent2 = new Intent(getActivity(), settingsScreen.class);
                 startActivity(intent2);
                 break;
